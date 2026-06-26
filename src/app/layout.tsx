@@ -61,6 +61,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full scroll-smooth antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "VibeCoding Enterprise AI",
+              "applicationCategory": "BusinessApplication",
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "USD",
+                "lowPrice": "19.00",
+                "highPrice": "99.00"
+              }
+            })
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-primary-dark text-light relative overflow-x-hidden">
         {/* Subtle grid lines background overlay */}
         <div className="fixed inset-0 pointer-events-none grid-lines opacity-40 z-[-1]" aria-hidden="true" />
