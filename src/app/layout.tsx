@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { InitialLoader } from "@/components/InitialLoader";
 import { CursorGlow } from "@/components/CursorGlow";
 import "./globals.css";
 
@@ -64,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full scroll-smooth antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full scroll-smooth antialiased overflow-x-hidden`} suppressHydrationWarning>
       <head suppressHydrationWarning>
         <script
           suppressHydrationWarning
@@ -85,10 +84,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-primary-dark text-light relative overflow-x-hidden">
+      <body suppressHydrationWarning className="min-h-full flex flex-col bg-primary-dark text-light relative overflow-x-hidden overscroll-x-none">
         {/* Subtle grid lines background overlay */}
         <div className="fixed inset-0 pointer-events-none grid-lines opacity-40 z-[-1]" aria-hidden="true" />
-        <InitialLoader />
         <CursorGlow />
         {children}
       </body>

@@ -58,6 +58,19 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html {
+    overflow-x: clip;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
   }
 
   h1, h2, h3, h4, h5, h6 {

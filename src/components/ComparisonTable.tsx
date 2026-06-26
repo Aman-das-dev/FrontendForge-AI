@@ -22,7 +22,7 @@ export function ComparisonTable() {
 
       <div className="overflow-hidden rounded-2xl border border-secondary-dark/40">
         {/* Header */}
-        <div className="grid grid-cols-3 bg-secondary-dark/20 border-b border-secondary-dark/40">
+        <div className="hidden md:grid grid-cols-3 bg-secondary-dark/20 border-b border-secondary-dark/40">
           <div className="p-4 md:p-6 font-mono text-xs text-secondary-light/60 tracking-widest uppercase">Metric</div>
           <div className="p-4 md:p-6 font-mono text-xs text-secondary-light/40 tracking-widest uppercase text-center border-x border-secondary-dark/20">Traditional</div>
           <div className="p-4 md:p-6 font-mono text-xs text-primary-yellow tracking-widest uppercase text-center">NEXUS</div>
@@ -32,15 +32,17 @@ export function ComparisonTable() {
         {rows.map((row, i) => (
           <div
             key={row.label}
-            className={`grid grid-cols-3 transition-colors duration-200 hover:bg-secondary-dark/10 ${
+            className={`grid grid-cols-1 md:grid-cols-3 transition-colors duration-200 hover:bg-secondary-dark/10 ${
               i < rows.length - 1 ? 'border-b border-secondary-dark/20' : ''
             }`}
           >
-            <div className="p-4 md:p-6 font-mono text-sm text-light">{row.label}</div>
-            <div className="p-4 md:p-6 text-sm text-secondary-light/50 text-center border-x border-secondary-dark/20 line-through decoration-secondary-light/20">
+            <div className="p-4 md:p-6 font-mono text-xs md:text-sm text-light border-b md:border-b-0 md:border-r border-secondary-dark/20">
+              {row.label}
+            </div>
+            <div className="p-4 md:p-6 text-sm text-secondary-light/50 text-left md:text-center border-b md:border-b-0 md:border-x border-secondary-dark/20 line-through decoration-secondary-light/20">
               {row.traditional}
             </div>
-            <div className="p-4 md:p-6 text-sm text-primary-yellow font-medium text-center">
+            <div className="p-4 md:p-6 text-sm text-primary-yellow font-medium text-left md:text-center">
               {row.nexus}
             </div>
           </div>

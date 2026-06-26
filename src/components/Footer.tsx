@@ -27,9 +27,9 @@ export function Footer() {
     <footer className="w-full bg-primary-dark border-t border-secondary-dark/30 pt-10 pb-6 overflow-hidden">
       {/* 1. Continuous Marquee Ticker */}
       <div className="w-full border-y border-secondary-dark/30 py-5 mb-8 relative overflow-hidden bg-primary-dark">
-        <div className="flex w-[200%] gap-12 items-center animate-[marquee_20s_linear_infinite]">
+        <div className="flex w-[200%] gap-6 sm:gap-12 items-center animate-[marquee_20s_linear_infinite]">
           {/* First Loop */}
-          <div className="flex justify-around w-1/2 items-center gap-12">
+          <div className="flex justify-around w-1/2 items-center gap-6 sm:gap-12">
             {LOGOS.map((logo, idx) => (
               <span key={idx} className="font-mono text-sm tracking-widest text-secondary-light/40 uppercase font-bold hover:text-primary-yellow transition-colors">
                 {logo}
@@ -37,7 +37,7 @@ export function Footer() {
             ))}
           </div>
           {/* Second Loop for seamless sliding */}
-          <div className="flex justify-around w-1/2 items-center gap-12">
+          <div className="flex justify-around w-1/2 items-center gap-6 sm:gap-12">
             {LOGOS.map((logo, idx) => (
               <span key={`dup-${idx}`} className="font-mono text-sm tracking-widest text-secondary-light/40 uppercase font-bold hover:text-primary-yellow transition-colors">
                 {logo}
@@ -48,9 +48,9 @@ export function Footer() {
       </div>
 
       {/* Main Footer Links */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start gap-12 mb-4 text-left">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start gap-10 md:gap-12 mb-4 text-left">
         {/* Logo and Tagline (Left side) */}
-        <div className="flex flex-col justify-between h-fit gap-4 max-w-md">
+        <div className="flex flex-col justify-between h-fit gap-4 max-w-md min-w-0">
           <div>
             <h3 className="font-mono text-xl font-bold text-light mb-3">NEXUS</h3>
             <p className="text-secondary-light text-sm leading-relaxed max-w-sm">
@@ -63,9 +63,9 @@ export function Footer() {
         </div>
 
         {/* Quick Links & Newsletter Signup (Right side) */}
-        <div className="flex flex-col sm:flex-row gap-12 md:gap-16 w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row gap-8 md:gap-16 w-full md:w-auto min-w-0">
           {/* Quick Links */}
-          <div className="min-w-[150px]">
+          <div className="min-w-0 sm:min-w-[150px]">
             <h4 className="font-mono text-xs font-bold text-primary-yellow tracking-widest uppercase mb-4">\\\ RESOURCES</h4>
             <ul className="space-y-2 text-sm text-secondary-light">
               <li><a href="#features" className="hover:text-light transition-colors">Platform Features</a></li>
@@ -76,7 +76,7 @@ export function Footer() {
           </div>
 
           {/* Legal */}
-          <div className="min-w-[120px]">
+          <div className="min-w-0 sm:min-w-[120px]">
             <h4 className="font-mono text-xs font-bold text-primary-yellow tracking-widest uppercase mb-4">\\\ LEGAL</h4>
             <ul className="space-y-2 text-sm text-secondary-light">
               <li><a href="#" className="hover:text-light transition-colors">Privacy Policy</a></li>
@@ -88,12 +88,12 @@ export function Footer() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="max-w-xs w-full">
+          <div className="max-w-xs w-full min-w-0">
             <h4 className="font-mono text-xs font-bold text-primary-yellow tracking-widest uppercase mb-4">\\\ GET STARTED</h4>
             <p className="text-xs text-secondary-light mb-3 leading-relaxed">
               Subscribe to receive direct system status updates and pipeline advisories.
             </p>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input 
                 type="email" 
                 placeholder="ops@domain.com"

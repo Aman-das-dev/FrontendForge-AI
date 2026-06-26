@@ -58,7 +58,7 @@ export function FAQ() {
       {/* Right Column: Categories & Accordions */}
       <div className="md:col-span-3 flex flex-col gap-6">
         {/* Category Tabs */}
-        <div className="flex gap-2 border-b border-secondary-dark/30 pb-4">
+        <div className="flex flex-wrap gap-2 border-b border-secondary-dark/30 pb-4">
           {categories.map((cat) => (
             <button
               key={cat}

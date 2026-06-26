@@ -13,16 +13,16 @@ export function CTASection() {
           <p className="text-secondary-light max-w-xl mx-auto text-sm md:text-base mb-10 text-balance">
             Join 500+ enterprise teams running mission-critical workloads on NEXUS. Start free, scale infinitely.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 max-w-xl mx-auto">
             <a
               href="#pricing"
-              className="px-10 py-4 bg-primary-yellow text-primary-dark font-mono text-sm font-bold uppercase tracking-wider rounded-lg hover:bg-light transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-primary-dark"
+              className="w-full sm:w-auto px-10 py-4 bg-primary-yellow text-primary-dark font-mono text-sm font-bold uppercase tracking-wider rounded-lg hover:bg-light transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-primary-dark text-center"
             >
               Start Free Trial
             </a>
             <a
               href="#features"
-              className="px-10 py-4 border border-secondary-dark text-light font-mono text-sm font-bold uppercase tracking-wider rounded-lg hover:border-primary-yellow hover:text-primary-yellow transition-all duration-200"
+              className="w-full sm:w-auto px-10 py-4 border border-secondary-dark text-light font-mono text-sm font-bold uppercase tracking-wider rounded-lg hover:border-primary-yellow hover:text-primary-yellow transition-all duration-200 text-center"
             >
               View Live Demo
             </a>

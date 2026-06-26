@@ -4,7 +4,7 @@ import { ArrowPathIcon } from './Icons';
 
 export function Hero() {
   return (
-    <section className="w-full pt-32 pb-24 px-6 md:px-12 max-w-[1400px] mx-auto grid md:grid-cols-2 gap-12 items-center relative overflow-hidden">
+    <section className="w-full pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-12 max-w-[1400px] mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-80 h-80 bg-secondary-dark/25 rounded-full blur-3xl -z-10" />
       
@@ -14,22 +14,22 @@ export function Hero() {
           <span className="w-1.5 h-1.5 bg-primary-yellow rounded-full animate-pulse" />
           \\\ SYSTEM INTERFACE: ACTIVE
         </span>
-        <h1 className="text-6xl md:text-8xl font-mono text-light tracking-tighter mb-6 leading-none">
+        <h1 className="text-5xl sm:text-6xl md:text-8xl font-mono text-light tracking-tighter mb-6 leading-none">
           NEXUS
         </h1>
-        <p className="text-lg md:text-xl text-secondary-light font-sans max-w-lg mb-10 leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-secondary-light font-sans max-w-lg mb-8 md:mb-10 leading-relaxed">
           The tactical execution layer for enterprise data operations. Direct telemetry pipelines, zero-cold-start edge compute, and autonomous system orchestration.
         </p>
-        <div className="flex flex-row items-center gap-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 w-full">
           <a 
             href="#pricing" 
-            className="px-8 py-4 bg-primary-yellow text-primary-dark font-mono text-sm font-bold uppercase tracking-wider rounded-lg hover:bg-light transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-primary-dark"
+            className="w-full sm:w-auto text-center px-8 py-4 bg-primary-yellow text-primary-dark font-mono text-sm font-bold uppercase tracking-wider rounded-lg hover:bg-light transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-offset-2 focus:ring-offset-primary-dark"
           >
             Start Building
           </a>
           <a 
             href="#features" 
-            className="font-mono text-sm font-bold uppercase tracking-wider text-secondary-light hover:text-light transition-colors flex items-center gap-2 group"
+            className="w-full sm:w-auto font-mono text-sm font-bold uppercase tracking-wider text-secondary-light hover:text-light transition-colors flex items-center justify-center sm:justify-start gap-2 group"
           >
             Read Telemetry Docs
             <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -38,9 +38,9 @@ export function Hero() {
       </div>
 
       {/* Right Column: Radar Graphic */}
-      <div className="flex justify-center items-center relative h-[350px] md:h-[450px] w-full">
+      <div className="flex justify-center items-center relative h-[300px] sm:h-[350px] md:h-[450px] w-full">
         {/* Animated Radar Radar Container */}
-        <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] border border-secondary-dark/30 rounded-full flex items-center justify-center">
+        <div className="relative w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] border border-secondary-dark/30 rounded-full flex items-center justify-center">
           {/* Coordinates Grid Lines */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="w-[1px] h-full bg-secondary-dark/20" />
@@ -77,7 +77,7 @@ export function Hero() {
 
           {/* Micro Telemetry Text Around Radar */}
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 font-mono text-[9px] text-secondary-light/40 tracking-wider">
-            RADAR_BEACON_09 // ACTV
+            RADAR_BEACON_09 // NEW
           </div>
           <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 font-mono text-[9px] text-secondary-light/40 tracking-wider">
             GRID_COORD_45.98 // -112.45
