@@ -16,7 +16,6 @@ export function Navigation() {
           <Link href="#testimonials" className="hover:text-light transition-colors flex items-center gap-1">
             Enterprise <LinkIcon size={14} className="opacity-60" />
           </Link>
-          <a href="https://github.com/Aman-das-dev/FrontendForge-AI" target="_blank" rel="noopener noreferrer" className="hover:text-light transition-colors">Github</a>
         </nav>
 
         <div>

@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { InitialLoader } from "@/components/InitialLoader";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  preload: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -60,9 +63,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full scroll-smooth antialiased`}>
-      <head>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full scroll-smooth antialiased`} suppressHydrationWarning>
+      <head suppressHydrationWarning>
         <script
+          suppressHydrationWarning
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -83,6 +87,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-primary-dark text-light relative overflow-x-hidden">
         {/* Subtle grid lines background overlay */}
         <div className="fixed inset-0 pointer-events-none grid-lines opacity-40 z-[-1]" aria-hidden="true" />
+        <InitialLoader />
         {children}
       </body>
     </html>

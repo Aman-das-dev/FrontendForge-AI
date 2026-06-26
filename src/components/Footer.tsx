@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const LOGOS = [
   'AWS',
@@ -13,6 +13,16 @@ const LOGOS = [
 ];
 
 export function Footer() {
+  const [time, setTime] = useState<string>('');
+
+  useEffect(() => {
+    setTime(new Date().toISOString().substring(11, 19));
+    const timer = setInterval(() => {
+      setTime(new Date().toISOString().substring(11, 19));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <footer className="w-full bg-primary-dark border-t border-secondary-dark/30 pt-10 pb-6 overflow-hidden">
       {/* 1. Continuous Marquee Ticker */}
@@ -92,7 +102,7 @@ export function Footer() {
         </h1>
         <div className="flex flex-col sm:flex-row justify-between w-full text-xs text-secondary-light/50 font-mono gap-4 text-center sm:text-left border-t border-secondary-dark/10 pt-3">
           <span>&copy; {new Date().getFullYear()} NEXUS DATA OPS. ALL RIGHTS RESERVED.</span>
-          <span>SYSTEM TIME: {new Date().toISOString().substring(11, 19)} UTC</span>
+          <span suppressHydrationWarning>SYSTEM TIME: {time || new Date().toISOString().substring(11, 19)} UTC</span>
         </div>
       </div>
     </footer>
