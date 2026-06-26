@@ -5,11 +5,11 @@ const STEPS = [
   {
     icon: <SearchIcon size={20} />,
     title: 'Upload Data',
-    desc: 'Ingest raw datasets from any source — APIs, databases, file uploads, or live streams.',
+    desc: 'Ingest raw datasets from any source - APIs, databases, file uploads, or live streams.',
     tag: 'STEP_01',
     color: 'border-primary-yellow/40 bg-primary-yellow/5',
     iconColor: 'text-primary-yellow',
-    glow: 'shadow-[0_0_20px_rgba(255,200,1,0.08)]'
+    glow: 'shadow-[0_0_20px_rgba(116,200,255,0.08)]',
   },
   {
     icon: <Cog8ToothIcon size={20} />,
@@ -18,7 +18,7 @@ const STEPS = [
     tag: 'STEP_02',
     color: 'border-accent-orange/40 bg-accent-orange/5',
     iconColor: 'text-accent-orange',
-    glow: 'shadow-[0_0_20px_rgba(255,153,50,0.08)]'
+    glow: 'shadow-[0_0_20px_rgba(79,125,255,0.08)]',
   },
   {
     icon: <LinkIcon size={20} />,
@@ -27,7 +27,7 @@ const STEPS = [
     tag: 'STEP_03',
     color: 'border-secondary-light/30 bg-secondary-light/5',
     iconColor: 'text-secondary-light',
-    glow: 'shadow-[0_0_20px_rgba(217,232,226,0.06)]'
+    glow: 'shadow-[0_0_20px_rgba(198,215,234,0.06)]',
   },
   {
     icon: <ChartPieIcon size={20} />,
@@ -36,7 +36,7 @@ const STEPS = [
     tag: 'STEP_04',
     color: 'border-primary-yellow/40 bg-primary-yellow/5',
     iconColor: 'text-primary-yellow',
-    glow: 'shadow-[0_0_20px_rgba(255,200,1,0.08)]'
+    glow: 'shadow-[0_0_20px_rgba(116,200,255,0.08)]',
   },
   {
     icon: <ArrowTrendingUpIcon size={20} />,
@@ -45,7 +45,46 @@ const STEPS = [
     tag: 'STEP_05',
     color: 'border-accent-orange/40 bg-accent-orange/5',
     iconColor: 'text-accent-orange',
-    glow: 'shadow-[0_0_20px_rgba(255,153,50,0.08)]'
+    glow: 'shadow-[0_0_20px_rgba(79,125,255,0.08)]',
+  },
+];
+
+const VELOCITY_CARDS = [
+  {
+    title: 'Instant Ingestion',
+    desc: 'Connect to databases, message queues, and cloud files with a single click. Extract, parse, and structure your data automatically.',
+    footnote: 'Supports PostgreSQL, MongoDB, Kafka, AWS S3, and 50+ other integrations.',
+    accent: 'border-primary-yellow/45 bg-primary-yellow/6',
+    glow: 'shadow-[0_0_24px_rgba(116,200,255,0.08)]',
+    tall: true,
+    icon: '01',
+  },
+  {
+    title: 'AI Model Tuning',
+    desc: 'Tune custom models on private data while maintaining strict governance and predictable latency.',
+    footnote: 'Hyperparameter controls, policy checks, and deployment-ready presets.',
+    accent: 'border-accent-orange/35 bg-accent-orange/6',
+    glow: 'shadow-[0_0_24px_rgba(79,125,255,0.08)]',
+    tall: false,
+    icon: '02',
+  },
+  {
+    title: 'Enterprise Security',
+    desc: 'Bank-grade encryption, audit trails, and role-based access controls for every environment.',
+    footnote: 'TLS 1.3, static analysis, and directory-aware permissions.',
+    accent: 'border-secondary-light/25 bg-secondary-light/6',
+    glow: 'shadow-[0_0_24px_rgba(198,215,234,0.06)]',
+    tall: false,
+    icon: '03',
+  },
+  {
+    title: 'Predictive Flows',
+    desc: 'Automate branching logic that adapts to incoming data, user actions, and system signals.',
+    footnote: 'Low-code orchestration with sub-second triggers and observability.',
+    accent: 'border-primary-yellow/35 bg-primary-yellow/6',
+    glow: 'shadow-[0_0_24px_rgba(116,200,255,0.08)]',
+    tall: false,
+    icon: '04',
   },
 ];
 
@@ -58,13 +97,11 @@ export function WorkflowTimeline() {
         </span>
         <h2 className="text-3xl md:text-5xl font-mono text-light mt-6 mb-4">How NEXUS Works</h2>
         <p className="text-secondary-light max-w-2xl mx-auto text-sm md:text-base text-balance">
-          From raw data ingestion to actionable reports — a fully automated pipeline.
+          From raw data ingestion to actionable reports - a fully automated pipeline.
         </p>
       </div>
 
-      {/* Timeline */}
       <div className="relative">
-        {/* Vertical connecting line (desktop) */}
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary-yellow/30 via-accent-orange/20 to-secondary-dark/10 -translate-x-1/2" />
 
         <div className="flex flex-col gap-8 md:gap-0">
@@ -75,7 +112,6 @@ export function WorkflowTimeline() {
                 i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
-              {/* Content card */}
               <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                 <div className={`p-6 rounded-2xl border ${step.color} ${step.glow} backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]`}>
                   <div className="flex items-center gap-3 mb-3 justify-start">
@@ -86,14 +122,63 @@ export function WorkflowTimeline() {
                 </div>
               </div>
 
-              {/* Center node */}
               <div className="relative z-10 w-12 h-12 rounded-full border-2 border-secondary-dark bg-primary-dark flex items-center justify-center shrink-0">
                 <div className={`${step.iconColor}`}>{step.icon}</div>
               </div>
 
-              {/* Spacer for alternation */}
               <div className="flex-1 hidden md:block" />
             </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-24">
+        <div className="mb-10">
+          <h3 className="text-2xl md:text-4xl font-mono text-light mb-3">Built for Extreme Engineering Velocities</h3>
+          <p className="text-secondary-light max-w-3xl text-sm md:text-base text-balance">
+            Everything you need to connect datasets, train secure models, and launch robust workflows without slowing your team down.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {VELOCITY_CARDS.map((card) => (
+            <article
+              key={card.title}
+              className={`rounded-[1.75rem] border bg-white/5 backdrop-blur-md p-6 md:p-7 ${card.accent} ${card.glow} ${
+                card.tall ? 'md:row-span-2 min-h-[420px]' : 'min-h-[240px]'
+              }`}
+            >
+              <div className="flex items-start justify-between gap-4 mb-8">
+                <div className="w-12 h-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-primary-yellow text-sm font-mono">
+                  <span aria-hidden="true">{card.icon}</span>
+                </div>
+                <span className="font-mono text-[10px] tracking-[0.3em] text-secondary-light/45 uppercase">
+                  Velocity Stack
+                </span>
+              </div>
+
+              <div className="max-w-xl">
+                <h3 className="text-2xl md:text-[2rem] font-mono text-light leading-tight mb-4">{card.title}</h3>
+                <p className="text-secondary-light leading-relaxed text-sm md:text-base mb-6">{card.desc}</p>
+                <p className="font-mono text-[11px] md:text-xs leading-relaxed text-primary-yellow/90">{card.footnote}</p>
+              </div>
+
+              <div className="mt-8 h-px bg-gradient-to-r from-primary-yellow/0 via-primary-yellow/50 to-accent-orange/0" />
+              <div className="mt-6 grid grid-cols-3 gap-3">
+                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4">
+                  <div className="font-mono text-[10px] text-secondary-light/45 mb-1">Latency</div>
+                  <div className="font-mono text-sm text-light">Sub-second</div>
+                </div>
+                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4">
+                  <div className="font-mono text-[10px] text-secondary-light/45 mb-1">Scale</div>
+                  <div className="font-mono text-sm text-light">Elastic</div>
+                </div>
+                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4">
+                  <div className="font-mono text-[10px] text-secondary-light/45 mb-1">Trust</div>
+                  <div className="font-mono text-sm text-light">Governed</div>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </div>

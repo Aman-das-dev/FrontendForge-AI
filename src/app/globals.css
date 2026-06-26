@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-dark: #172B36;
-  --color-secondary-dark: #114C5A;
-  --color-primary-yellow: #FFC801;
-  --color-accent-orange: #FF9932;
-  --color-light: #F1F6F4;
-  --color-secondary-light: #D9E8E2;
+  --color-primary-dark: #071321;
+  --color-secondary-dark: #12324f;
+  --color-primary-yellow: #74c8ff;
+  --color-accent-orange: #4f7dff;
+  --color-light: #f4f9ff;
+  --color-secondary-light: #c6d7ea;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
@@ -60,12 +60,12 @@
 
 @layer base {
   :root {
-    --background: var(--color-primary-dark);
+    --background: radial-gradient(circle at top, rgba(84, 150, 255, 0.14), transparent 42%), var(--color-primary-dark);
     --foreground: var(--color-light);
   }
 
   body {
-    background-color: var(--background);
+    background: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
