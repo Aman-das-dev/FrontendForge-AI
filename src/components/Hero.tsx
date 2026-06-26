@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="w-full pt-28 md:pt-32 pb-20 md:pb-24 px-6 md:px-12 max-w-[1400px] mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-80 h-80 bg-secondary-dark/25 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-80 h-80 bg-secondary-dark/25 rounded-full blur-3xl -z-10 motion-safe:animate-[float_6s_ease-in-out_infinite]" />
       
       {/* Left Column: Copy */}
       <div className="flex flex-col items-start text-left">
@@ -64,11 +64,11 @@ export function Hero() {
           
           {/* Pulsing Nodes */}
           <div className="absolute top-[25%] left-[30%] w-2 h-2 bg-primary-yellow rounded-full shadow-[0_0_10px_#FFC801] animate-ping" />
-          <div className="absolute top-[25%] left-[30%] w-2 h-2 bg-primary-yellow rounded-full" />
+          <div className="absolute top-[25%] left-[30%] w-2 h-2 bg-primary-yellow rounded-full motion-safe:animate-[float_5s_ease-in-out_infinite]" />
           
-          <div className="absolute bottom-[35%] right-[25%] w-1.5 h-1.5 bg-accent-orange rounded-full shadow-[0_0_8px_#FF9932] animate-pulse" />
+          <div className="absolute bottom-[35%] right-[25%] w-1.5 h-1.5 bg-accent-orange rounded-full shadow-[0_0_8px_#FF9932] animate-pulse motion-safe:animate-[float_7s_ease-in-out_infinite]" />
           
-          <div className="absolute top-[60%] left-[20%] w-2 h-2 bg-secondary-light rounded-full opacity-60 animate-[pulse_2s_infinite]" />
+          <div className="absolute top-[60%] left-[20%] w-2 h-2 bg-secondary-light rounded-full opacity-60 animate-[pulse_2s_infinite] motion-safe:animate-[float_8s_ease-in-out_infinite]" />
 
           {/* Center Core */}
           <div className="relative w-12 h-12 bg-primary-dark border border-primary-yellow/40 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(255,200,1,0.15)]">

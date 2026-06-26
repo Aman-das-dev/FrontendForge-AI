@@ -19,7 +19,7 @@ export function Navigation() {
           <button
             type="button"
             onClick={() => setShowConnects((value) => !value)}
-            className="font-mono text-[11px] tracking-[0.28em] text-secondary-light uppercase rounded-full border border-secondary-dark/60 bg-secondary-dark/20 px-4 py-1.5 hover:border-primary-yellow/50 hover:text-light transition-all duration-200"
+            className="font-mono text-[11px] tracking-[0.28em] text-secondary-light uppercase rounded-full border border-secondary-dark/60 bg-secondary-dark/20 px-4 py-1.5 hover:border-primary-yellow/50 hover:text-light transition-all duration-200 motion-safe:animate-[float_6s_ease-in-out_infinite]"
             aria-expanded={showConnects}
             aria-label="Toggle Connects Everywhere"
           >
@@ -42,7 +42,7 @@ export function Navigation() {
         </div>
 
         {showConnects && (
-          <div className="absolute top-full right-[11rem] mt-3 w-[min(92vw,38rem)] rounded-2xl border border-secondary-dark/50 bg-primary-dark/95 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.35)] overflow-hidden">
+          <div className="absolute top-full right-[11rem] mt-3 w-[min(92vw,38rem)] rounded-2xl border border-secondary-dark/50 bg-primary-dark/95 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.35)] overflow-hidden animate-[pop-in_180ms_ease-out_both]">
             <div className="px-5 py-4 border-b border-secondary-dark/30">
               <p className="font-mono text-xs tracking-[0.28em] text-primary-yellow uppercase">Connects Everywhere</p>
               <p className="mt-2 text-sm text-secondary-light">
