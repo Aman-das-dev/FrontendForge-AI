@@ -9,7 +9,10 @@ interface ScrollRevealProps {
 
 export function ScrollReveal({ children, className = '', delay = 0 }: ScrollRevealProps) {
   return (
-    <div className={`w-full opacity-100 translate-y-0 transition-opacity transition-transform duration-500 ease-out ${className}`}>
+    <div
+      style={{ animationDelay: `${delay}ms` }}
+      className={`w-full animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both] ${className}`}
+    >
       {children}
     </div>
   );

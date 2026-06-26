@@ -10,6 +10,8 @@ const STEPS = [
     color: 'border-primary-yellow/40 bg-primary-yellow/5',
     iconColor: 'text-primary-yellow',
     glow: 'shadow-[0_0_20px_rgba(116,200,255,0.08)]',
+    anim: 'animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both]',
+    delay: 'delay-[0ms]',
   },
   {
     icon: <Cog8ToothIcon size={20} />,
@@ -19,6 +21,8 @@ const STEPS = [
     color: 'border-accent-orange/40 bg-accent-orange/5',
     iconColor: 'text-accent-orange',
     glow: 'shadow-[0_0_20px_rgba(79,125,255,0.08)]',
+    anim: 'animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both]',
+    delay: 'delay-[120ms]',
   },
   {
     icon: <LinkIcon size={20} />,
@@ -28,6 +32,8 @@ const STEPS = [
     color: 'border-secondary-light/30 bg-secondary-light/5',
     iconColor: 'text-secondary-light',
     glow: 'shadow-[0_0_20px_rgba(198,215,234,0.06)]',
+    anim: 'animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both]',
+    delay: 'delay-[240ms]',
   },
   {
     icon: <ChartPieIcon size={20} />,
@@ -37,6 +43,8 @@ const STEPS = [
     color: 'border-primary-yellow/40 bg-primary-yellow/5',
     iconColor: 'text-primary-yellow',
     glow: 'shadow-[0_0_20px_rgba(116,200,255,0.08)]',
+    anim: 'animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both]',
+    delay: 'delay-[360ms]',
   },
   {
     icon: <ArrowTrendingUpIcon size={20} />,
@@ -46,6 +54,8 @@ const STEPS = [
     color: 'border-accent-orange/40 bg-accent-orange/5',
     iconColor: 'text-accent-orange',
     glow: 'shadow-[0_0_20px_rgba(79,125,255,0.08)]',
+    anim: 'animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both]',
+    delay: 'delay-[480ms]',
   },
 ];
 
@@ -58,6 +68,7 @@ const VELOCITY_CARDS = [
     glow: 'shadow-[0_0_24px_rgba(116,200,255,0.08)]',
     tall: true,
     icon: '01',
+    delay: 'delay-[0ms]',
   },
   {
     title: 'AI Model Tuning',
@@ -67,6 +78,7 @@ const VELOCITY_CARDS = [
     glow: 'shadow-[0_0_24px_rgba(79,125,255,0.08)]',
     tall: false,
     icon: '02',
+    delay: 'delay-[140ms]',
   },
   {
     title: 'Enterprise Security',
@@ -76,6 +88,7 @@ const VELOCITY_CARDS = [
     glow: 'shadow-[0_0_24px_rgba(198,215,234,0.06)]',
     tall: false,
     icon: '03',
+    delay: 'delay-[280ms]',
   },
   {
     title: 'Predictive Flows',
@@ -85,6 +98,7 @@ const VELOCITY_CARDS = [
     glow: 'shadow-[0_0_24px_rgba(116,200,255,0.08)]',
     tall: false,
     icon: '04',
+    delay: 'delay-[420ms]',
   },
 ];
 
@@ -108,21 +122,24 @@ export function WorkflowTimeline() {
           {STEPS.map((step, i) => (
             <div
               key={step.tag}
-              className={`relative flex flex-col md:flex-row items-center gap-6 md:gap-12 ${
+              className={`relative flex flex-col md:flex-row items-center gap-6 md:gap-12 ${step.anim} ${step.delay} ${
                 i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               }`}
             >
               <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                <div className={`p-6 rounded-2xl border ${step.color} ${step.glow} backdrop-blur-sm transition-all duration-300 hover:scale-[1.02]`}>
+                <div className={`group relative overflow-hidden p-6 rounded-2xl border ${step.color} ${step.glow} backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:scale-[1.02]`}>
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent -translate-x-[120%] group-hover:animate-[shimmer-x_1.5s_linear_infinite]" />
                   <div className="flex items-center gap-3 mb-3 justify-start">
                     <span className="font-mono text-[10px] text-secondary-light/40">{step.tag}</span>
+                    <span className="h-2 w-2 rounded-full bg-primary-yellow animate-pulse-soft" />
                   </div>
                   <h3 className="font-mono text-lg text-light font-bold mb-2">{step.title}</h3>
                   <p className="text-sm text-secondary-light leading-relaxed">{step.desc}</p>
                 </div>
               </div>
 
-              <div className="relative z-10 w-12 h-12 rounded-full border-2 border-secondary-dark bg-primary-dark flex items-center justify-center shrink-0">
+              <div className="relative z-10 w-12 h-12 rounded-full border-2 border-secondary-dark bg-primary-dark flex items-center justify-center shrink-0 animate-float">
+                <div className="absolute inset-0 rounded-full border border-primary-yellow/30 animate-pulse-soft" />
                 <div className={`${step.iconColor}`}>{step.icon}</div>
               </div>
 
@@ -144,12 +161,14 @@ export function WorkflowTimeline() {
           {VELOCITY_CARDS.map((card) => (
             <article
               key={card.title}
-              className={`rounded-[1.75rem] border bg-white/5 backdrop-blur-md p-6 md:p-7 ${card.accent} ${card.glow} ${
+              className={`group relative overflow-hidden rounded-[1.75rem] border bg-white/5 backdrop-blur-md p-6 md:p-7 ${card.accent} ${card.glow} animate-[fade-in-up_760ms_cubic-bezier(0.16,1,0.3,1)_both] ${card.delay} ${
                 card.tall ? 'md:row-span-2 min-h-[420px]' : 'min-h-[240px]'
               }`}
             >
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-yellow/70 to-transparent animate-shimmer-x" />
+              <div className="pointer-events-none absolute -right-10 top-8 h-24 w-24 rounded-full bg-primary-yellow/10 blur-3xl animate-float" />
               <div className="flex items-start justify-between gap-4 mb-8">
-                <div className="w-12 h-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-primary-yellow text-sm font-mono">
+                <div className="w-12 h-12 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center text-primary-yellow text-sm font-mono animate-pulse-soft">
                   <span aria-hidden="true">{card.icon}</span>
                 </div>
                 <span className="font-mono text-[10px] tracking-[0.3em] text-secondary-light/45 uppercase">
@@ -165,15 +184,15 @@ export function WorkflowTimeline() {
 
               <div className="mt-8 h-px bg-gradient-to-r from-primary-yellow/0 via-primary-yellow/50 to-accent-orange/0" />
               <div className="mt-6 grid grid-cols-3 gap-3">
-                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4">
+                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4 animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both] delay-[120ms]">
                   <div className="font-mono text-[10px] text-secondary-light/45 mb-1">Latency</div>
                   <div className="font-mono text-sm text-light">Sub-second</div>
                 </div>
-                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4">
+                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4 animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both] delay-[220ms]">
                   <div className="font-mono text-[10px] text-secondary-light/45 mb-1">Scale</div>
                   <div className="font-mono text-sm text-light">Elastic</div>
                 </div>
-                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4">
+                <div className="rounded-xl border border-white/10 bg-primary-dark/35 px-3 py-4 animate-[fade-in-up_700ms_cubic-bezier(0.16,1,0.3,1)_both] delay-[320ms]">
                   <div className="font-mono text-[10px] text-secondary-light/45 mb-1">Trust</div>
                   <div className="font-mono text-sm text-light">Governed</div>
                 </div>
