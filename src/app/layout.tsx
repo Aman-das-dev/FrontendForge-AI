@@ -13,23 +13,23 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VibeCoding Enterprise AI | Elite Pricing & Features",
-  description: "Next-generation enterprise AI platform. Transparent pricing, dynamic features, and unmatched performance.",
-  metadataBase: new URL('https://vibe-coding-elite.vercel.app'),
+  title: "NEXUS Data Ops | Distributed Telemetry Engine",
+  description: "Next-generation enterprise data automation platform. Zero-latency edge routing, dynamic agent fine-tuning, and matrix telemetry.",
+  metadataBase: new URL('https://nexus-data-ops.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "VibeCoding Enterprise AI | Elite Pricing & Features",
-    description: "Next-generation enterprise AI platform. Transparent pricing, dynamic features, and unmatched performance.",
-    url: "https://vibe-coding-elite.vercel.app",
-    siteName: "VibeCoding Enterprise",
+    title: "NEXUS Data Ops | Distributed Telemetry Engine",
+    description: "Next-generation enterprise data automation platform. Zero-latency edge routing, dynamic agent fine-tuning, and matrix telemetry.",
+    url: "https://nexus-data-ops.vercel.app",
+    siteName: "NEXUS Data Ops",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "VibeCoding Enterprise AI Platform",
+        alt: "NEXUS Platform Interface",
       },
     ],
     locale: "en_US",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VibeCoding Enterprise AI | Elite Pricing & Features",
-    description: "Next-generation enterprise AI platform. Transparent pricing, dynamic features, and unmatched performance.",
+    title: "NEXUS Data Ops | Distributed Telemetry Engine",
+    description: "Next-generation enterprise data automation platform. Zero-latency edge routing, dynamic agent fine-tuning, and matrix telemetry.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -68,13 +68,13 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "VibeCoding Enterprise AI",
+              "name": "NEXUS Data Ops",
               "applicationCategory": "BusinessApplication",
               "offers": {
                 "@type": "AggregateOffer",
                 "priceCurrency": "USD",
-                "lowPrice": "19.00",
-                "highPrice": "99.00"
+                "lowPrice": "29.00",
+                "highPrice": "499.00"
               }
             })
           }}

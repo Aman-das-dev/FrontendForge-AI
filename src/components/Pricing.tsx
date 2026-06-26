@@ -1,12 +1,19 @@
 'use client';
 import { useSyncExternalStore } from 'react';
 import { pricingStore, PlanKey } from '@/lib/pricingStore';
+import { ChevronDownIcon } from './Icons';
+
+const SERVER_SNAPSHOTS: Record<PlanKey, { value: number; symbol: string; billing: 'monthly' | 'annual' }> = {
+  starter: { value: 0, symbol: '$', billing: 'monthly' },
+  pro: { value: 0, symbol: '$', billing: 'monthly' },
+  enterprise: { value: 0, symbol: '$', billing: 'monthly' },
+};
 
 export function PriceText({ plan }: { plan: PlanKey }) {
   const price = useSyncExternalStore(
     pricingStore.subscribe,
     () => pricingStore.getPrice(plan),
-    () => ({ value: 0, symbol: '$', billing: 'monthly' }) // SSR snapshot
+    () => SERVER_SNAPSHOTS[plan] // cached referentially stable snapshot
   );
   
   return (
@@ -56,12 +63,12 @@ export function CurrencySelect() {
         onChange={(e) => pricingStore.setCurrency(e.target.value as any)}
         className="appearance-none bg-secondary-dark/30 border border-secondary-dark text-light text-sm rounded-full px-6 py-2 pr-10 outline-none focus:border-primary-yellow transition-colors cursor-pointer"
       >
-        <option value="USD">USD ($)</option>
-        <option value="EUR">EUR (€)</option>
-        <option value="INR">INR (₹)</option>
+        <option value="USD" className="bg-primary-dark text-light">USD ($)</option>
+        <option value="EUR" className="bg-primary-dark text-light">EUR (€)</option>
+        <option value="INR" className="bg-primary-dark text-light">INR (₹)</option>
       </select>
       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-light">
-        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        <ChevronDownIcon size={16} />
       </div>
     </div>
   );
