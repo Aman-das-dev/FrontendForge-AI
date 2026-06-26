@@ -9,7 +9,7 @@ export function Navigation() {
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-primary-dark/80 backdrop-blur-md border-b border-secondary-dark/30">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-16 flex items-center justify-between gap-4">
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 h-16 flex items-center justify-between gap-4">
         <Link href="/" className="font-mono text-xl font-bold tracking-tight text-light flex items-center gap-2 group">
           <ArrowPathIcon className="text-primary-yellow transition-transform duration-500 group-hover:rotate-180" size={24} />
           <span>NEX<span className="text-primary-yellow">US</span></span>
@@ -40,6 +40,42 @@ export function Navigation() {
             Launch Console
           </button>
         </div>
+
+        {showConnects && (
+          <div className="absolute top-full right-[11rem] mt-3 w-[min(92vw,38rem)] rounded-2xl border border-secondary-dark/50 bg-primary-dark/95 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.35)] overflow-hidden">
+            <div className="px-5 py-4 border-b border-secondary-dark/30">
+              <p className="font-mono text-xs tracking-[0.28em] text-primary-yellow uppercase">Connects Everywhere</p>
+              <p className="mt-2 text-sm text-secondary-light">
+                Plug into your existing stack with native connectors and zero-config setup.
+              </p>
+            </div>
+            <div className="grid gap-3 p-5 sm:grid-cols-2">
+              {[
+                ['S', 'Slack', 'Alerts & notifications'],
+                ['G', 'GitHub', 'CI/CD webhooks'],
+                ['N', 'Notion', 'Documentation sync'],
+                ['Z', 'Zapier', 'Workflow triggers'],
+                ['G', 'Google Drive', 'File ingestion'],
+                ['A', 'Airtable', 'Database sync'],
+                ['J', 'Jira', 'Issue tracking'],
+                ['A', 'AWS S3', 'Cloud storage'],
+              ].map(([initial, name, desc]) => (
+                <div
+                  key={`${name}-${desc}`}
+                  className="flex items-center gap-3 rounded-xl border border-secondary-dark/40 bg-secondary-dark/10 px-3 py-3"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-secondary-dark/50 bg-primary-dark/60 font-mono text-sm font-bold text-primary-yellow">
+                    {initial}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="font-mono text-sm font-bold text-light">{name}</div>
+                    <div className="text-xs text-secondary-light/80">{desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
