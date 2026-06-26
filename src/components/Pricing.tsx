@@ -32,19 +32,24 @@ export function BillingToggle() {
   );
   
   return (
-    <div className="flex items-center space-x-2 bg-secondary-dark/30 p-1 rounded-full border border-secondary-dark w-fit mx-auto">
-      <button 
-        className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${billing === 'monthly' ? 'bg-primary-yellow text-primary-dark' : 'text-light hover:text-primary-yellow'}`}
-        onClick={() => pricingStore.setBilling('monthly')}
-      >
-        Monthly
-      </button>
-      <button 
-        className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${billing === 'annual' ? 'bg-primary-yellow text-primary-dark' : 'text-light hover:text-primary-yellow'}`}
-        onClick={() => pricingStore.setBilling('annual')}
-      >
-        Annual <span className="text-accent-orange text-xs ml-1">-20%</span>
-      </button>
+    <div className="flex flex-col items-center gap-3">
+      <div className="flex items-center space-x-2 bg-secondary-dark/30 p-1 rounded-full border border-secondary-dark w-fit mx-auto">
+        <button 
+          className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${billing === 'monthly' ? 'bg-primary-yellow text-primary-dark' : 'text-light hover:text-primary-yellow'}`}
+          onClick={() => pricingStore.setBilling('monthly')}
+        >
+          Monthly
+        </button>
+        <button 
+          className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${billing === 'annual' ? 'bg-primary-yellow text-primary-dark' : 'text-light hover:text-primary-yellow'}`}
+          onClick={() => pricingStore.setBilling('annual')}
+        >
+          Annual
+        </button>
+      </div>
+      <span className={`inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1 rounded-full transition-all duration-300 ${billing === 'annual' ? 'bg-accent-orange/15 text-accent-orange border border-accent-orange/30 opacity-100' : 'opacity-0'}`}>
+        ✦ You save 20%
+      </span>
     </div>
   );
 }

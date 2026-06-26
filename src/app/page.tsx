@@ -7,28 +7,48 @@ import { CaseStudies } from '@/components/CaseStudies';
 import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
 import { ScrollReveal } from '@/components/ScrollReveal';
+import { WorkflowTimeline } from '@/components/WorkflowTimeline';
+import { ComparisonTable } from '@/components/ComparisonTable';
+import { Integrations } from '@/components/Integrations';
+import { AnimatedStats } from '@/components/AnimatedStats';
+import { CTASection } from '@/components/CTASection';
 
 export default function Home() {
   return (
     <>
       <Navigation />
       <main className="min-h-screen flex flex-col items-center w-full bg-primary-dark overflow-x-hidden">
-        {/* Feature: Hero Section with Radar Telemetry Graphic */}
-        <ScrollReveal delay={100}>
+        {/* 1. Hero Section with Radar Telemetry Graphic */}
+        <ScrollReveal delay={50}>
           <Hero />
         </ScrollReveal>
 
-        {/* Feature: Case Studies & Statistics Counters */}
+        {/* 2. Trusted By / Case Studies & Statistics Counters */}
         <ScrollReveal delay={100}>
           <CaseStudies />
         </ScrollReveal>
 
-        {/* Feature 2: Responsive Bento-to-Accordion Canvas System */}
+        {/* 3. Animated Statistics */}
+        <ScrollReveal delay={100}>
+          <AnimatedStats />
+        </ScrollReveal>
+
+        {/* 4. Bento-to-Accordion Feature Canvas */}
         <ScrollReveal delay={100}>
           <BentoSystem />
         </ScrollReveal>
 
-        {/* Feature 1: Pricing Engine (Matrix Calculated, Isolated State Re-renders) */}
+        {/* 5. Workflow Timeline */}
+        <ScrollReveal delay={100}>
+          <WorkflowTimeline />
+        </ScrollReveal>
+
+        {/* 6. Comparison Table */}
+        <ScrollReveal delay={100}>
+          <ComparisonTable />
+        </ScrollReveal>
+
+        {/* 7. Pricing Engine (Matrix Calculated, Isolated State Re-renders) */}
         <ScrollReveal delay={100}>
           <section id="pricing" className="w-full py-24 px-6 md:px-12 bg-primary-dark/30 border-t border-secondary-dark/30 relative overflow-hidden">
             <div className="max-w-[1400px] mx-auto relative z-10">
@@ -42,7 +62,7 @@ export default function Home() {
                 </p>
                 
                 {/* Performance-Isolated Toggles & Selection */}
-                <div className="flex flex-col items-center justify-center gap-6">
+                <div className="flex flex-col items-center justify-center gap-4">
                   <BillingToggle />
                   <CurrencySelect />
                 </div>
@@ -87,19 +107,29 @@ export default function Home() {
           </section>
         </ScrollReveal>
 
-        {/* Testimonials */}
+        {/* 8. Testimonials */}
         <ScrollReveal delay={100}>
           <section className="w-full bg-primary-dark">
             <SocialProof />
           </section>
         </ScrollReveal>
 
-        {/* FAQ with Tab-switch Category Accordions */}
+        {/* 9. Integrations */}
+        <ScrollReveal delay={100}>
+          <Integrations />
+        </ScrollReveal>
+
+        {/* 10. FAQ with Tab-switch Category Accordions */}
         <ScrollReveal delay={100}>
           <FAQ />
         </ScrollReveal>
 
-        {/* Footer with Marquee ticker and Watermark logo */}
+        {/* 11. CTA Section */}
+        <ScrollReveal delay={100}>
+          <CTASection />
+        </ScrollReveal>
+
+        {/* 12. Footer with Marquee ticker and Watermark logo */}
         <ScrollReveal delay={100}>
           <Footer />
         </ScrollReveal>

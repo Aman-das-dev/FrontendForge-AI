@@ -63,7 +63,7 @@ export function Footer() {
         </div>
 
         {/* Quick Links & Newsletter Signup (Right side) */}
-        <div className="flex flex-col sm:flex-row gap-12 md:gap-24 w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row gap-12 md:gap-16 w-full md:w-auto">
           {/* Quick Links */}
           <div className="min-w-[150px]">
             <h4 className="font-mono text-xs font-bold text-primary-yellow tracking-widest uppercase mb-4">\\\ RESOURCES</h4>
@@ -75,11 +75,23 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Legal */}
+          <div className="min-w-[120px]">
+            <h4 className="font-mono text-xs font-bold text-primary-yellow tracking-widest uppercase mb-4">\\\ LEGAL</h4>
+            <ul className="space-y-2 text-sm text-secondary-light">
+              <li><a href="#" className="hover:text-light transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-light transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-light transition-colors">Contact</a></li>
+              <li><a href="#" className="hover:text-light transition-colors">LinkedIn</a></li>
+              <li><a href="/sitemap.xml" className="hover:text-light transition-colors">Sitemap</a></li>
+            </ul>
+          </div>
+
           {/* Newsletter Signup */}
           <div className="max-w-xs w-full">
             <h4 className="font-mono text-xs font-bold text-primary-yellow tracking-widest uppercase mb-4">\\\ GET STARTED</h4>
             <p className="text-xs text-secondary-light mb-3 leading-relaxed">
-              Subscribe to receives direct system status updates and pipeline advisories.
+              Subscribe to receive direct system status updates and pipeline advisories.
             </p>
             <div className="flex gap-2">
               <input 
