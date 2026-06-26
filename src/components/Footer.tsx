@@ -97,9 +97,9 @@ export function Footer() {
 
       {/* 2. Massive Stretched Logo & Copyright (Highly Compact & Negative Margins) */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 border-t border-secondary-dark/20 pt-4 flex flex-col items-center gap-2">
-        <h1 className="text-[12vw] md:text-[14vw] font-mono font-black text-secondary-dark/10 select-none tracking-widest leading-[0.7] text-center w-full uppercase -mt-6 -mb-6 md:-mt-12 md:-mb-12">
+        <div aria-hidden="true" className="text-[12vw] md:text-[14vw] font-mono font-black text-secondary-dark/10 select-none tracking-widest leading-[0.7] text-center w-full uppercase -mt-6 -mb-6 md:-mt-12 md:-mb-12">
           NEXUS
-        </h1>
+        </div>
         <div className="flex flex-col sm:flex-row justify-between w-full text-xs text-secondary-light/50 font-mono gap-4 text-center sm:text-left border-t border-secondary-dark/10 pt-3">
           <span>&copy; {new Date().getFullYear()} NEXUS DATA OPS. ALL RIGHTS RESERVED.</span>
           <span suppressHydrationWarning>SYSTEM TIME: {time || new Date().toISOString().substring(11, 19)} UTC</span>

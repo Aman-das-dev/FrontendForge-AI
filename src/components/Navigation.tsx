@@ -7,7 +7,7 @@ export function Navigation() {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
         <Link href="/" className="font-mono text-xl font-bold tracking-tight text-light flex items-center gap-2 group">
           <ArrowPathIcon className="text-primary-yellow transition-transform duration-500 group-hover:rotate-180" size={24} />
-          <span>VIBE<span className="text-primary-yellow">OS</span></span>
+          <span>NEX<span className="text-primary-yellow">US</span></span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-secondary-light">

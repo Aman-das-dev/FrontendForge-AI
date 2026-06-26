@@ -2,7 +2,7 @@ import { ArrowTrendingUpIcon } from './Icons';
 
 const TESTIMONIALS = [
   {
-    quote: "VibeOS transformed our data automation ingestion speeds. We scaled from 1,000 events to 5,000,000 daily with zero database tuning.",
+    quote: "NEXUS transformed our data automation ingestion speeds. We scaled from 1,000 events to 5,000,000 daily with zero database tuning.",
     author: "Elena Rostova",
     role: "VP of Infrastructure, NeuroScale",
     metric: "+480% Throughput"

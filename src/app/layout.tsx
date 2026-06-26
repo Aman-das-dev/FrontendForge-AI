@@ -18,14 +18,14 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "NEXUS Data Ops | Distributed Telemetry Engine",
   description: "Next-generation enterprise data automation platform. Zero-latency edge routing, dynamic agent fine-tuning, and matrix telemetry.",
-  metadataBase: new URL('https://nexus-data-ops.vercel.app'),
+  metadataBase: new URL('https://frontend-forge-ai.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "NEXUS Data Ops | Distributed Telemetry Engine",
     description: "Next-generation enterprise data automation platform. Zero-latency edge routing, dynamic agent fine-tuning, and matrix telemetry.",
-    url: "https://nexus-data-ops.vercel.app",
+    url: "https://frontend-forge-ai.vercel.app",
     siteName: "NEXUS Data Ops",
     images: [
       {
