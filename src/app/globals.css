@@ -74,6 +74,19 @@
   :root {
     --background: radial-gradient(circle at top, rgba(84, 150, 255, 0.14), transparent 42%), var(--color-primary-dark);
     --foreground: var(--color-light);
+    color-scheme: dark;
+  }
+
+  :root[data-theme="light"] {
+    --color-primary-dark: #172B36;
+    --color-secondary-dark: #114C5A;
+    --color-primary-yellow: #FFC801;
+    --color-accent-orange: #FF9932;
+    --color-light: #F1F6F4;
+    --color-secondary-light: #D9E8E2;
+    --background: radial-gradient(circle at top, rgba(255, 200, 1, 0.14), transparent 40%), #F1F6F4;
+    --foreground: #172B36;
+    color-scheme: light;
   }
 
   body {
@@ -84,6 +97,7 @@
     -moz-osx-font-smoothing: grayscale;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    transition: background 280ms ease, color 280ms ease;
   }
 
   html {
@@ -125,8 +139,26 @@
   .smooth-transition {
     transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
   }
+  .timeline-reveal .timeline-card {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .timeline-reveal.timeline-reveal-visible .timeline-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .timeline-reveal.timeline-reveal-visible .timeline-card:nth-child(1) { transition-delay: 0ms; }
+  .timeline-reveal.timeline-reveal-visible .timeline-card:nth-child(2) { transition-delay: 110ms; }
+  .timeline-reveal.timeline-reveal-visible .timeline-card:nth-child(3) { transition-delay: 220ms; }
+  .timeline-reveal.timeline-reveal-visible .timeline-card:nth-child(4) { transition-delay: 330ms; }
   select option {
     background-color: var(--color-primary-dark);
     color: var(--color-light);
+  }
+
+  :root[data-theme="light"] select option {
+    background-color: #F1F6F4;
+    color: #172B36;
   }
 }

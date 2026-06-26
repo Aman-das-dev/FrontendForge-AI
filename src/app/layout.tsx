@@ -67,6 +67,22 @@ export default function RootLayout({
       <head suppressHydrationWarning>
         <script
           suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('nexus-theme');
+                  if (!theme) {
+                    theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+                  }
+                  document.documentElement.dataset.theme = theme;
+                } catch (error) {}
+              })();
+            `,
+          }}
+        />
+        <script
+          suppressHydrationWarning
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -84,7 +100,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body suppressHydrationWarning className="min-h-full flex flex-col bg-primary-dark text-light relative overflow-x-hidden overscroll-x-none">
+      <body suppressHydrationWarning className="min-h-full flex flex-col bg-primary-dark text-light relative overflow-x-hidden overscroll-x-none transition-colors duration-300">
         {/* Subtle grid lines background overlay */}
         <div className="fixed inset-0 pointer-events-none grid-lines opacity-40 z-[-1]" aria-hidden="true" />
         <CursorGlow />

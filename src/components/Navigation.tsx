@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowPathIcon, LinkIcon } from './Icons';
+import { ThemeToggle } from './ThemeToggle';
 
 export function Navigation() {
   const [showConnects, setShowConnects] = useState(false);
@@ -35,7 +36,8 @@ export function Navigation() {
           </Link>
         </nav>
 
-        <div>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
           <button className="px-5 py-2 bg-secondary-dark/50 border border-secondary-dark rounded-full text-sm font-medium text-light hover:border-primary-yellow transition-all duration-200">
             Launch Console
           </button>

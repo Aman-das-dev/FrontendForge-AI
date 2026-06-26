@@ -1,4 +1,6 @@
 'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import { ArrowTrendingUpIcon, Cog8ToothIcon, ChartPieIcon, LinkIcon, SearchIcon } from './Icons';
 
 const STEPS = [
@@ -103,8 +105,34 @@ const VELOCITY_CARDS = [
 ];
 
 export function WorkflowTimeline() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = sectionRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.18, rootMargin: '0px 0px -8% 0px' }
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-24 border-t border-secondary-dark/30">
+    <section
+      ref={sectionRef}
+      className={`timeline-reveal w-full max-w-[1400px] mx-auto px-6 md:px-12 py-24 border-t border-secondary-dark/30 ${
+        isVisible ? 'timeline-reveal-visible' : ''
+      }`}
+    >
       <div className="text-center mb-16">
         <span className="font-mono text-xs tracking-widest text-accent-orange bg-secondary-dark/30 border border-secondary-dark/60 px-3.5 py-1.5 rounded-full">
           \\\ WORKFLOW
@@ -157,12 +185,16 @@ export function WorkflowTimeline() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {VELOCITY_CARDS.map((card) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 md:auto-rows-[10rem] gap-6">
+          {VELOCITY_CARDS.map((card, index) => (
             <article
               key={card.title}
-              className={`group relative overflow-hidden rounded-[1.75rem] border bg-white/5 backdrop-blur-md p-6 md:p-7 ${card.accent} ${card.glow} animate-[fade-in-up_760ms_cubic-bezier(0.16,1,0.3,1)_both] ${card.delay} ${
-                card.tall ? 'md:row-span-2 min-h-[420px]' : 'min-h-[240px]'
+              className={`timeline-card group relative overflow-hidden rounded-[1.75rem] border bg-white/5 backdrop-blur-md p-6 md:p-7 ${card.accent} ${card.glow} ${card.delay} ${
+                isVisible ? 'timeline-card-visible' : ''
+              } ${card.tall ? 'md:row-span-2 md:min-h-[calc(20rem+1.5rem)]' : 'md:min-h-[10rem]'} ${
+                index === 0 ? 'md:col-start-1 md:row-start-1' : ''
+              } ${index === 1 ? 'md:col-start-2 md:row-start-1' : ''} ${index === 2 ? 'md:col-start-2 md:row-start-2' : ''} ${
+                index === 3 ? 'md:col-start-1 md:row-start-3' : ''
               }`}
             >
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-yellow/70 to-transparent animate-shimmer-x" />
